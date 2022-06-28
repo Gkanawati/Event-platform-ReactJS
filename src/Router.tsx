@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import Event from './pages/Event'
+import Subscribe from './pages/Subscribe'
 
 export default function Router() {
   return (
@@ -7,7 +8,7 @@ export default function Router() {
 
         <Route 
         path="/"
-         element={<h1>Home</h1>}
+         element={<Subscribe />}
         />
 
         <Route
