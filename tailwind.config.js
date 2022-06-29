@@ -12,7 +12,7 @@ module.exports = {
       },
       backgroundImage: {
         blur: 'url(/src/assets/blur-background.png)',
-        react: 'url(/src/assets/ReactJS iconReact-icon.svg)'
+        react: 'url(/src/assets/iconReact-icon.svg)',
       },
       colors: {
         green: {

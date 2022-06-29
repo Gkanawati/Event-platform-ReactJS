@@ -28,7 +28,7 @@ export default function Subscribe() {
 
   return (
     <div className="min-h-screen bg-blur bg-cover bg-no-repeat flex flex-col items-center">
-      <img src="../assets/ReactJS iconReact-icon.svg" alt="" />
+      <img src="../assets/iconReact-icon.svg" alt="" />
       <div className="w-full max-w-[1100px] flex items-center justify-between mt-20 mx-auto bg-react bg-no-repeat bg-center bg-contain ">
         <div className="max-w-[640px]">
             <Logo />
