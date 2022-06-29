@@ -11,6 +11,7 @@ module.exports = {
         sans: 'Roboto, sans-serif'
       },
       backgroundImage: {
+        code: 'url(/src/assets/code-mockup.png)',
         blur: 'url(/src/assets/blur-background.png)',
         react: 'url(/src/assets/iconReact-icon.svg)',
       },
