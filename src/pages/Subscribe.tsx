@@ -1,15 +1,7 @@
-import { gql, useMutation } from "@apollo/client";
 import { useState, FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import { Logo } from "../components/Logo";
-
-const CREATE_SUBSCRIBER_MUTATION = gql`
-  mutation CreateSubscriber ($name: String!, $email: String!){
-    createSubscriber(data: {name: $name, email: $email}) {
-      id
-    }
-  }
-`
+import { useCreateSubscriberMutation } from "../graphql/generated";
 
 export default function Subscribe() {
 
@@ -19,7 +11,7 @@ export default function Subscribe() {
   const [email, setEmail] = useState('');
 
   // o useMutation é utilizado aqui no lugar do useQeuery por conta que os oo mutation so é chamado após alguma acao do usuario e nao assim que a pagina é carregada
-  const [createSubscriber, {loading}] = useMutation(CREATE_SUBSCRIBER_MUTATION);
+  const [createSubscriber, {loading}] = useCreateSubscriberMutation();
 
   async function handleSubscribe(event: FormEvent) {
     event.preventDefault();
