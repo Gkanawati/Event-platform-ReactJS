@@ -5,17 +5,17 @@ import '@vime/core/themes/default.css';
 
 const GET_LESSON_BY_SLUG_QUERY = gql`
   query GetLessonBySlug ($slug: String) {
-  lesson(where: {slug: $slug}) {
-    title
-    videoId
-    description
-    teacher {
-      bio
-      avatarURL
-      name
+    lesson(where: {slug: $slug}) {
+      title
+      videoId
+      description
+      teacher {
+        bio
+        avatarURL
+        name
+      }
     }
   }
-}
 `
 interface GetLessonBySlugResponse {
   lesson: {
@@ -46,7 +46,7 @@ export default function PlayerVideo(props: videoProps) {
 
   if(!data) {
     return (
-      <div className="flex-1">
+      <div className="flex-1 justify-center">
         <p>Carregando...</p>
       </div>
     )

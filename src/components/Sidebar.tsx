@@ -3,14 +3,14 @@ import { gql, useQuery } from "@apollo/client"
 
 const GET_LESSONS_QUERY = gql`
   query {
-  lessons(orderBy: availableAt_ASC, stage: PUBLISHED) {
-    slug
-    title
-    availableAt
-    lessonType
-    id
+    lessons(orderBy: availableAt_ASC, stage: PUBLISHED) {
+      slug
+      title
+      availableAt
+      lessonType
+      id
+    }
   }
-}
 `
 
 interface GetLessonsQueryResponse {

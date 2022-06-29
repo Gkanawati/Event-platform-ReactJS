@@ -1,15 +1,37 @@
+import { gql, useMutation } from "@apollo/client";
 import { useState, FormEvent } from "react";
+import { useNavigate } from "react-router-dom";
 import { Logo } from "../components/Logo";
 
+const CREATE_SUBSCRIBER_MUTATION = gql`
+  mutation CreateSubscriber ($name: String!, $email: String!){
+    createSubscriber(data: {name: $name, email: $email}) {
+      id
+    }
+  }
+`
+
 export default function Subscribe() {
+
+  const navigate = useNavigate();
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
 
-  function handleSubscribe(event: FormEvent) {
-    event?.preventDefault();
+  // o useMutation é utilizado aqui no lugar do useQeuery por conta que os oo mutation so é chamado após alguma acao do usuario e nao assim que a pagina é carregada
+  const [createSubscriber, {loading}] = useMutation(CREATE_SUBSCRIBER_MUTATION);
 
-    console.log(name, email);
+  async function handleSubscribe(event: FormEvent) {
+    event.preventDefault();
+
+    await createSubscriber({
+      variables: {
+        name, 
+        email,
+      }
+    })
+
+    navigate('/event')
   }
 
   return (
@@ -35,19 +57,20 @@ export default function Subscribe() {
               className="bg-gray-900 rounded px-5 h-14"
               type="text"
               placeholder="Seu nome completo"
-              onChange={(text) => setName(text.target.value)}
+              onChange={text => setName(text.target.value)}
             />
 
             <input
               className="bg-gray-900 rounded px-5 h-14"
               type="email"
               placeholder="Digite seu email"
-              onChange={(text) => setEmail(text.target.value)}
+              onChange={text => setEmail(text.target.value)}
             />
 
             <button
-            type="submit"
-            className="mt-4 bg-green-500 uppercase py-4 rounded font-bold text-sm hover:bg-green-700 transition"
+              type="submit"
+              disabled={loading}
+              className="mt-4 bg-green-500 uppercase py-4 rounded font-bold text-sm hover:bg-green-700 transition disabled:opacity-50"
             >
               Garantir minha vaga
             </button>
