@@ -1,11 +1,10 @@
-import { Routes, Route, BrowserRouter } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import Event from './pages/Event'
 import Subscribe from './pages/Subscribe'
 
 export default function Router() {
   return (
     <Routes>
-
         <Route 
         path="/"
          element={<Subscribe />}
@@ -20,7 +19,6 @@ export default function Router() {
          path="/event/lesson/:slug"
           element={<Event />}
         />
-
     </Routes>
   )
 }
