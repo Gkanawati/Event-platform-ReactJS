@@ -11,7 +11,8 @@ module.exports = {
         sans: 'Roboto, sans-serif'
       },
       backgroundImage: {
-        blur: 'url(/src/assets/blur-background.png)'
+        blur: 'url(/src/assets/blur-background.png)',
+        react: 'url(/src/assets/ReactJS iconReact-icon.svg)'
       },
       colors: {
         green: {

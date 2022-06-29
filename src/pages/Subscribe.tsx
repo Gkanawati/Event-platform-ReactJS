@@ -1,10 +1,21 @@
+import { useState, FormEvent } from "react";
 import { Logo } from "../components/Logo";
 
 export default function Subscribe() {
+
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+
+  function handleSubscribe(event: FormEvent) {
+    event?.preventDefault();
+
+    console.log(name, email);
+  }
+
   return (
     <div className="min-h-screen bg-blur bg-cover bg-no-repeat flex flex-col items-center">
       <img src="../assets/ReactJS iconReact-icon.svg" alt="" />
-      <div className="w-full max-w-[1100px] flex items-center justify-between mt-20 mx-auto">
+      <div className="w-full max-w-[1100px] flex items-center justify-between mt-20 mx-auto bg-react bg-no-repeat bg-center bg-contain ">
         <div className="max-w-[640px]">
             <Logo />
             <h1 className="mt-8 text-[2.5rem] leading-tight">
@@ -19,19 +30,27 @@ export default function Subscribe() {
         
           <strong className="text-2xl mb-6 block">Inscreva-se gratuitamente</strong>
         
-          <form action="" className="flex flex-col gap-2 w-full">
+          <form onSubmit={handleSubscribe} className="flex flex-col gap-2 w-full">
             <input 
-            className="bg-gray-900 rounded px-5 h-14"
-            type="text"
-            placeholder="Seu nome completo"
+              className="bg-gray-900 rounded px-5 h-14"
+              type="text"
+              placeholder="Seu nome completo"
+              onChange={(text) => setName(text.target.value)}
             />
 
             <input
               className="bg-gray-900 rounded px-5 h-14"
               type="email"
               placeholder="Digite seu email"
+              onChange={(text) => setEmail(text.target.value)}
             />
 
+            <button
+            type="submit"
+            className="mt-4 bg-green-500 uppercase py-4 rounded font-bold text-sm hover:bg-green-700 transition"
+            >
+              Garantir minha vaga
+            </button>
           </form>
         </div>
       </div>
