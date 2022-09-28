@@ -14,7 +14,7 @@ As principais bibliotecas JS utilizadas nesse projeto s√£o: Apollo para a conex√
 
 ## :link: Link do projeto:
 
-    https://event-platform-react-mok30ndvy-gkanawati.vercel.app/
+    https://plataforma-aulas-gk.vercel.app
 
 ## :bulb: Tecnologias usadas:
 
