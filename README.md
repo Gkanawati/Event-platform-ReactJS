@@ -10,7 +10,7 @@ A plataforma foi construída utilizando React para a construção do frontend e 
 
 Ao entrar no site temos a tela de inscrição do evento, que assim que o usuário é inscrito com sucesso, é direcionado às aulas do Curso! O projeto ainda contém muitas melhorias para serem implementadas, como sua versão responsiva para mobile.
 
-As principais bibliotecas JS utilizadas nesse projeto são: Apollo para a conexão com as APIs, graphql para fazer as requisições, tailwindcss para a estilização dos componentes e telas, abordando diversos conceitos exclusivos da biblioteca e a Vime.js para a exibição do player de Video, que nesse caso consome videos diretamente YouTube, mas com essa biblioteca pode-se dar play em qualquer onde o video estiver! 📚
+As principais bibliotecas JS utilizadas nesse projeto são: Apollo para a conexão com as APIs, graphql para fazer as requisições, tailwindcss para a estilização dos componentes e telas, abordando diversos conceitos exclusivos da biblioteca e a Vime.js para a exibição do player de Video, que nesse caso consome videos diretamente YouTube, mas com essa biblioteca pode-se dar play em qualquer plataforma onde o video estiver! 📚
 
 ## :link: Link do projeto:
 
